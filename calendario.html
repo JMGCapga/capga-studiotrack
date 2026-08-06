@@ -589,6 +589,12 @@ const STATUS_LABELS = {
   idea:'Idea', produccion:'En producción', revision:'En revisión', listo:'Listo', publicado:'Publicado'
 };
 
+// Forzar ocultar spinner después de 3 segundos como fallback
+setTimeout(() => {
+  const ls = document.getElementById('loadingScreen');
+  if (ls) { ls.classList.add('hidden'); setTimeout(() => ls.style.display = 'none', 300); }
+}, 3000);
+
 // ── CACHÉ LOCAL ───────────────────────────────────────────────────────────────
 const CACHE_KEY = 'capga_editorial_cache';
 
